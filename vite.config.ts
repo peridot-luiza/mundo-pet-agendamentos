@@ -1,23 +1,22 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+importar { definirConfig } de "vite";
+importar reagir de "@vitejs/plugin-react-swc";
+importar caminho de "caminho";
+importar { marcador de componentes } de "adicionador adorável";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+exportar padrão definirConfig(({ modo }) => ({
   base: '/mundo-pet-agendamentos/',
-  server: {
-    host: "::",
-    port: 8080,
+  servidor: {
+    anfitrião: "::",
+    porto: 8080,
   },
   plugins: [
-    react(),
-    mode === 'development' &&
-    componentTagger(),
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    reagir(),
+    modo === 'desenvolvimento' &&
+    marcador de componentes(),
+  ].filtro(Booleano),
+  resolvedor: {
+    pseudônimo: {
+      "@": caminho.resolvedor(__nome fazer diretório, "./src"),
     },
   },
 }));
