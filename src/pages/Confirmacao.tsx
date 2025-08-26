@@ -77,24 +77,24 @@ const Confirmacao = () => {
     <div className="min-h-screen bg-gradient-to-b from-pet-blue-light to-white">
       <Header />
       
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-pet-blue mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold text-pet-blue mb-2 md:mb-4">
               Confirmação e Pagamento
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground px-4">
               Revise os dados do seu agendamento e finalize o pagamento
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Appointment Summary */}
             <Card className="pet-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl text-pet-blue">Resumo do Agendamento</CardTitle>
+              <CardHeader className="px-4 md:px-6">
+                <CardTitle className="text-lg md:text-xl text-pet-blue">Resumo do Agendamento</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="px-4 md:px-6 space-y-4">
                 <div>
                   <h4 className="font-semibold text-pet-blue">Serviço</h4>
                   <p className="text-foreground">{appointmentData.serviceType}</p>
@@ -108,8 +108,8 @@ const Confirmacao = () => {
                 <div>
                   <h4 className="font-semibold text-pet-blue">Dados do Dono</h4>
                   <p className="text-foreground">{appointmentData.ownerName}</p>
-                  <p className="text-sm text-muted-foreground">{appointmentData.phone}</p>
-                  <p className="text-sm text-muted-foreground">{appointmentData.email}</p>
+                  <p className="text-sm text-muted-foreground break-words">{appointmentData.phone}</p>
+                  <p className="text-sm text-muted-foreground break-words">{appointmentData.email}</p>
                 </div>
 
                 <Separator />
@@ -130,7 +130,7 @@ const Confirmacao = () => {
                     <Separator />
                     <div>
                       <h4 className="font-semibold text-pet-blue">Motivo da Consulta</h4>
-                      <p className="text-foreground">{appointmentData.reason}</p>
+                      <p className="text-foreground text-sm">{appointmentData.reason}</p>
                     </div>
                   </>
                 )}
@@ -140,7 +140,7 @@ const Confirmacao = () => {
                     <Separator />
                     <div>
                       <h4 className="font-semibold text-pet-blue">Observações</h4>
-                      <p className="text-foreground">{appointmentData.observations}</p>
+                      <p className="text-foreground text-sm">{appointmentData.observations}</p>
                     </div>
                   </>
                 )}
@@ -157,11 +157,11 @@ const Confirmacao = () => {
 
             {/* Payment Information */}
             <Card className="pet-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl text-pet-blue">Instruções de Pagamento</CardTitle>
+              <CardHeader className="px-4 md:px-6">
+                <CardTitle className="text-lg md:text-xl text-pet-blue">Instruções de Pagamento</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-foreground">
+              <CardContent className="px-4 md:px-6 space-y-6">
+                <p className="text-foreground text-sm md:text-base">
                   Para finalizar seu agendamento, realize o pagamento via Pix ou Depósito/Transferência bancária.
                 </p>
 
@@ -170,13 +170,13 @@ const Confirmacao = () => {
                   <h4 className="font-semibold text-pet-blue mb-3">💳 Pagamento via PIX</h4>
                   <div className="space-y-2">
                     <div>
-                      <span className="font-medium">Chave PIX:</span>
-                      <p className="text-sm bg-white p-2 rounded border font-mono">
+                      <span className="font-medium text-sm">Chave PIX:</span>
+                      <p className="text-xs md:text-sm bg-white p-2 rounded border font-mono break-all">
                         mundopet@email.com
                       </p>
                     </div>
                     <div className="bg-white p-4 rounded text-center">
-                      <div className="w-32 h-32 bg-gray-200 rounded mx-auto flex items-center justify-center">
+                      <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-200 rounded mx-auto flex items-center justify-center">
                         <span className="text-xs text-gray-500">QR Code PIX</span>
                       </div>
                       <p className="text-xs text-muted-foreground mt-2">
@@ -206,12 +206,12 @@ const Confirmacao = () => {
                 </div>
 
                 <div className="text-center space-y-4">
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs md:text-sm text-muted-foreground">
                     Após realizar o pagamento, seu agendamento estará confirmado. 
                     Entraremos em contato para confirmar os detalhes.
                   </p>
                   
-                  <Link to="/">
+                  <Link to="/" className="block">
                     <Button variant="hero" size="lg" className="w-full">
                       ✅ Agendamento Confirmado
                     </Button>

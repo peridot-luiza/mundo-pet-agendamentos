@@ -44,34 +44,34 @@ const BanhoTosa = () => {
     <div className="min-h-screen bg-gradient-to-b from-pet-blue-light to-white">
       <Header />
       
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-pet-blue mb-6">
+          <div className="text-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold text-pet-blue mb-4 md:mb-6">
               Agendamento de Banho & Tosa
             </h1>
             
             <img 
               src={groomingPets} 
               alt="Pets bem cuidados após banho e tosa" 
-              className="w-full h-64 object-cover rounded-2xl pet-shadow mb-6"
+              className="w-full h-48 md:h-64 object-cover rounded-xl md:rounded-2xl pet-shadow mb-4 md:mb-6"
             />
             
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground px-4">
               Deixe seu pet ainda mais bonito e cheiroso! Preencha o formulário abaixo para agendar.
             </p>
           </div>
 
           <Card className="pet-shadow">
-            <CardHeader>
-              <CardTitle className="text-2xl text-pet-blue">Dados para Agendamento</CardTitle>
+            <CardHeader className="px-4 md:px-6">
+              <CardTitle className="text-xl md:text-2xl text-pet-blue">Dados para Agendamento</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-4 md:px-6">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Owner Information */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-pet-blue">Informações do Dono</h3>
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <h3 className="text-base md:text-lg font-semibold text-pet-blue">Informações do Dono</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="ownerName">Nome Completo *</Label>
                       <Input 
@@ -109,8 +109,8 @@ const BanhoTosa = () => {
 
                 {/* Pet Information */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-pet-blue">Informações do Pet</h3>
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <h3 className="text-base md:text-lg font-semibold text-pet-blue">Informações do Pet</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="petName">Nome do Pet *</Label>
                       <Input 
@@ -135,7 +135,7 @@ const BanhoTosa = () => {
                     </div>
                   </div>
                   
-                  <div className="grid md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <Label htmlFor="breed">Raça</Label>
                       <Input 
@@ -170,7 +170,7 @@ const BanhoTosa = () => {
 
                 {/* Service Selection */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-pet-blue">Serviço Desejado</h3>
+                  <h3 className="text-base md:text-lg font-semibold text-pet-blue">Serviço Desejado</h3>
                   <div>
                     <Label htmlFor="service">Tipo de Serviço *</Label>
                     <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
@@ -188,8 +188,8 @@ const BanhoTosa = () => {
 
                 {/* Date and Time */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-pet-blue">Data e Horário</h3>
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <h3 className="text-base md:text-lg font-semibold text-pet-blue">Data e Horário</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="date">Data *</Label>
                       <Input 
